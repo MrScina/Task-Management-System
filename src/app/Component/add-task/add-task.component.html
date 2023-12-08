@@ -1,0 +1,34 @@
+<div class="container my-5">
+    <h1 style="color:rgb(8, 10, 41);" class="fst-italic">Add Task</h1>
+<div class="row">
+    <div class="col-6">
+        <a href="tasklist" style="float:right;" class="btn btn-primary my-2" tabindex="-1" role="button" aria-disabled="true">Back to list</a>
+        <form #form="ngForm" (ngSubmit)="CreateTask()">
+            <div class="mb-3">
+                <label for="tittle" class="form-label">Tittle</label>
+                <input type="text" required minlength="1"  class="form-control" id="tittle" 
+                name="tittle" [(ngModel)]="AddedTasks.tittle">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description"
+                name="description" [(ngModel)]="AddedTasks.description"></textarea>
+            </div>
+       
+            <div class="mb-3">
+                <label for="status" class="form-label">Choose a Status:</label>
+                <select name="status"  id="status" [(ngModel)]="selectedStatus.name" class="form-label col-8">
+                        <option value="To Do">To Do</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                </select>
+             </div>
+            <button type="submit" class="btn btn-success">Save</button>
+            
+
+        </form>
+
+
+    </div>
+</div>
+</div>

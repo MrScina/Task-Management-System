@@ -1,0 +1,42 @@
+<body>
+  <div class="my-2">
+   </div>
+<div class="container">
+  
+  <form class="form-inline"#form="ngForm" (ngSubmit)="getSercheditem()">
+    <div class="col-3 my-2"><input type="search" class="form-control mr-sm-2 col-6" id="search"placeholder="Search"aria-label="Seargch"name="search" [(ngModel)]="query"></div>
+    <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  
+<div class="row">
+  <div class="col-18">
+    <a href="tasklist/add" class="btn btn-primary my-5" style="float:center;" tabindex="-1" role="button" aria-disabled="true">Add Tasks</a>
+<table class="table table-hover table-striped" *ngIf="todotask && todotask.length >0 ">
+  
+    <thead>
+        <tr>
+          
+          <th>Tittle</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let Todo of todotask">
+             
+              <td>{{Todo.tittle}}</td>
+              <td>{{Todo.description}}</td>
+              <td>{{Todo.status}}</td>
+              
+              <td><a [routerLink]="['/tasklist','edit',Todo.id]" class="btn btn-success " role="button">View</a></td>
+         </tr>
+               
+      </tbody>
+  </table>
+  </div>
+</div>
+</div>
+<div class="container my-5 fst-italic" id ="edit"><p *ngIf="!todotask || todotask.length <=  0" > No Task found</p></div>
+  
+</body>

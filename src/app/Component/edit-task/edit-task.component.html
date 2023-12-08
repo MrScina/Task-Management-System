@@ -1,0 +1,48 @@
+
+
+<div class="container my-5" id ="edit">
+   
+    <h1 style="color:rgb(8, 10, 41);" class="fst-italic">Edit Your Task</h1>
+   
+  
+        <div class="col-6">
+            <a href="tasklist" style="float:right;" class="btn btn-primary my-2" tabindex="-1" role="button" aria-disabled="true">Back to list</a>
+
+            <form #form="ngForm" (ngSubmit)="updateTask()">
+                <div class="mb-3">
+                    <label for="id" class="form-label">ID</label>
+                    <input type="text" class="form-control mb-3" id="id" readonly
+                    name="id" [(ngModel)]="perTask.id">
+                </div>
+                <div class="mb-3">
+                    <label for="tittle" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="tittle"
+                    name="tittle" [(ngModel)]="perTask.tittle">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">description</label>
+                    <textarea class="form-control" id="description" 
+                    name="description" [(ngModel)]="perTask.description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="status" class="row">Current Status:<h5 style="color: green">{{perTask.status}}</h5></label>
+                  
+                    <label for="status" class="row">Update the status:</label>
+                    <select id="status" name="status" [(ngModel)]="selectedStatus" class="form-control my-2"placeholder="comment">
+                      
+                        <option *ngFor="let status of statuses" [ngValue]="status">{{ status.name }}</option>
+                    </select>
+                  </div>
+                  
+                  
+               
+    
+                <button type="submit" class="btn btn-success" >Update</button>
+                <div class="center" style="float:right">
+                  <button class="btn btn-danger" (click)="deleteTasks(perTask.id)" >Delete</button>
+                </div>
+            </form>
+           
+    </div>
+    </div>
+    
