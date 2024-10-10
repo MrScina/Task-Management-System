@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Task_Management_API.Contextdata;
@@ -125,7 +125,7 @@ namespace Task_Management_API.Controllers
 
                 if (employee == null)
                 {
-                    return NotFound();
+                    return BadRequest();
                 }
                 else
                 {
