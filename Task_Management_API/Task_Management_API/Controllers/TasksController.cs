@@ -75,7 +75,6 @@ namespace Task_Management_API.Controllers
         [HttpGet("getTaskById/{id:Guid}")]
         public async Task<IActionResult> getTaskById([FromRoute] Guid id)
         {
-      //here we getting the task by id
             try
             {
 
@@ -94,7 +93,6 @@ namespace Task_Management_API.Controllers
         [HttpPut("editTask/{id:Guid}")]
         public async Task<IActionResult> editTask([FromRoute] Guid id, Tasks UpdateRequest)
         {
-      //we edit the item here
             try
             {
 
@@ -132,10 +130,7 @@ namespace Task_Management_API.Controllers
                 {
                     _TaskContext.Remove(employee);
                     await _TaskContext.SaveChangesAsync();
-          ///develoment branch
-          ///
-          //child branch
-          //ui[op]ipu
+        
                 }
                 return Ok(employee);
             }
